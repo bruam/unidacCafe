@@ -21,7 +21,7 @@ public class ColaboradorService {
 	
 	@Transactional
 	public ColaboradorDTO salvar(ColaboradorDTO dto) {		
-		repositorio.salvar(dto.getNome(), dto.getNome(), dto.getOpcao());
+		repositorio.salvar(dto.getNome(), dto.getCpf(), dto.getOpcao());
 		return dto;
 	}
 	
