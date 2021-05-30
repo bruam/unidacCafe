@@ -1,13 +1,13 @@
-package unidac.unidac.cafe;
+package com.unidac.cafe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UnidacCafeApplication {
+public class ProjetoUnidacApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UnidacCafeApplication.class, args);
+		SpringApplication.run(ProjetoUnidacApplication.class, args);
 	}
 
 }

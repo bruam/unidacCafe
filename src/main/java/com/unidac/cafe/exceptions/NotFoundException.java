@@ -1,0 +1,11 @@
+package com.unidac.cafe.exceptions;
+
+import com.unidac.cafe.util.MessageUtils;
+
+public class NotFoundException extends RuntimeException{
+	
+	public NotFoundException() {
+		super(MessageUtils.NO_RECORDS_FOUND);
+	}
+}
+
