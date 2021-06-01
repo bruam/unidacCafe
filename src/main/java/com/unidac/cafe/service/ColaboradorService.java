@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.unidac.cafe.mapper.ColaboradorMapper;
+import com.unidac.cafe.model.Colaborador;
 import com.unidac.cafe.model.dto.ColaboradorDTO;
 import com.unidac.cafe.repository.ColaboradorRepository;
 
@@ -21,6 +22,7 @@ public class ColaboradorService {
 	
 	@Transactional
 	public ColaboradorDTO salvar(ColaboradorDTO dto) {		
+		
 		repositorio.salvar(dto.getNome(), dto.getCpf(), dto.getOpcao());
 		return dto;
 	}
@@ -46,6 +48,16 @@ public class ColaboradorService {
 		ColaboradorDTO dto = this.encontraPorId(id);
 		repositorio.deletar(dto.getId());
 		return dto;
+	}
+	
+	@Transactional
+	public ColaboradorDTO encontraPorCpf(String cpf) {
+		return mapper.toDto(repositorio.encontraPorCpf(cpf));
+	}
+	
+	@Transactional
+	public ColaboradorDTO encontraPorOpcao(String opcao) {
+		return mapper.toDto(repositorio.encontraPorOpcao(opcao));
 	}
 
 }

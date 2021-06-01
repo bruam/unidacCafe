@@ -1,5 +1,7 @@
 package com.unidac.cafe.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -56,5 +58,6 @@ public class Colaborador {
 	public void setOpcao(String opcao) {
 		this.opcao = opcao;
 	}
+	
 	
 }

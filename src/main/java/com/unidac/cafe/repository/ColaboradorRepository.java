@@ -15,8 +15,15 @@ import com.unidac.cafe.model.dto.ColaboradorDTO;
 @Repository
 public interface ColaboradorRepository extends JpaRepository<Colaborador, Long>{
 	
+	@Query(value = "SELECT * FROM colaborador WHERE cpf = :cpf",
+			nativeQuery = true)
+	Colaborador encontraPorCpf(String cpf);	  
 	
-	  @Query(value = "SELECT * FROM colaborador",
+	@Query(value = "SELECT * FROM colaborador WHERE opcao = :opcao",
+			nativeQuery = true)
+	Colaborador encontraPorOpcao(String opcao);
+
+	@Query(value = "SELECT * FROM colaborador",
 			 nativeQuery = true) 
 	  List<Colaborador> listar();
 	  

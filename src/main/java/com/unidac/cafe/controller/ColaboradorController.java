@@ -50,5 +50,15 @@ public class ColaboradorController {
 	public ResponseEntity<ColaboradorDTO> deletar(@PathVariable Long id) {
 		return ResponseEntity.ok(service.deletar(id));
 	}
+	
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<ColaboradorDTO> encontraPorCpf(ColaboradorDTO dto) {
+		return ResponseEntity.ok(service.encontraPorCpf(dto.getCpf()));
+	}
+	
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<ColaboradorDTO> encontraPorOpcao(ColaboradorDTO dto) {
+		return ResponseEntity.ok(service.encontraPorOpcao(dto.getOpcao()));
+	}
 
 }
