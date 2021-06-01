@@ -51,12 +51,12 @@ public class ColaboradorController {
 		return ResponseEntity.ok(service.deletar(id));
 	}
 	
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/cpf", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ColaboradorDTO> encontraPorCpf(ColaboradorDTO dto) {
 		return ResponseEntity.ok(service.encontraPorCpf(dto.getCpf()));
 	}
 	
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/opcao", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ColaboradorDTO> encontraPorOpcao(ColaboradorDTO dto) {
 		return ResponseEntity.ok(service.encontraPorOpcao(dto.getOpcao()));
 	}
