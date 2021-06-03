@@ -26,17 +26,16 @@ public class ColaboradorService {
 	
 	@Transactional
 	public ColaboradorDTO salvar(ColaboradorDTO dto) {		
-		Optional<Colaborador> optionalColabCpf = repositorio.encontraPorCpf(dto.getCpf());
+		/*Optional<Colaborador> optionalColabCpf = repositorio.encontraPorCpf(dto.getCpf());
 		Optional<Colaborador> optionalColabOpcao = repositorio.encontraPorOpcao(dto.getOpcao());
 		if(optionalColabCpf.isPresent()) {
 			throw new BusinessException(MessageUtils.COLABORADOR_ALREADY_EXISTS);
 		}
 		if(optionalColabOpcao.isPresent()) {
 			throw new BusinessException(MessageUtils.OPCAO_ALREADY_EXISTS);
-		}
-		Colaborador colab = mapper.toEntity(dto);
-		repositorio.salvar(colab.getNome(), colab.getCpf(), colab.getOpcao());
-		return mapper.toDto(colab);
+		}*/
+		repositorio.salvar(dto.getNome(), dto.getCpf(), dto.getOpcao());
+		return dto;
 	}
 	
 	@Transactional(readOnly = true)
@@ -55,6 +54,14 @@ public class ColaboradorService {
 
 	@Transactional
 	public ColaboradorDTO editar(ColaboradorDTO dto) {		
+		/*Optional<Colaborador> optionalColabCpf = repositorio.encontraPorCpf(dto.getCpf());
+		Optional<Colaborador> optionalColabOpcao = repositorio.encontraPorOpcao(dto.getOpcao());
+		if(optionalColabCpf.isPresent()) {
+			throw new BusinessException(MessageUtils.COLABORADOR_ALREADY_EXISTS);
+		}
+		if(optionalColabOpcao.isPresent()) {
+			throw new BusinessException(MessageUtils.OPCAO_ALREADY_EXISTS);
+		}*/
 		repositorio.editar(dto.getNome(), dto.getCpf(), dto.getOpcao(), dto.getId());
 		return dto;
 	}

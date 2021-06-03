@@ -1,10 +1,6 @@
 package com.unidac.cafe.model.dto;
 
-import java.util.List;
-
 import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ColaboradorDTO {
 	
